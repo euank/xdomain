@@ -28,6 +28,6 @@
     "parcel-bundler": "^1.7.0"
   },
   "dependencies": {
-    "xhook": "^1.4.9"
+    "xhook": "git+https://github.com/euank/xhook#2-status"
   }
 }
