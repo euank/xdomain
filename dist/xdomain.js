@@ -371,7 +371,7 @@ var implementation = require('./implementation');
 
 module.exports = Function.prototype.bind || implementation;
 
-},{"./implementation":34}],30:[function(require,module,exports) {
+},{"./implementation":34}],29:[function(require,module,exports) {
 var bind = require('function-bind');
 
 module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
@@ -486,7 +486,7 @@ if (hasSymbols) {
 		return false;
 	};
 }
-},{}],29:[function(require,module,exports) {
+},{}],30:[function(require,module,exports) {
 'use strict';
 
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
@@ -880,7 +880,7 @@ var ES5 = {
 };
 
 module.exports = ES5;
-},{"./helpers/isNaN":22,"./helpers/isFinite":23,"./helpers/sign":25,"./helpers/mod":26,"is-callable":33,"es-to-primitive/es5":32,"has":30}],28:[function(require,module,exports) {
+},{"./helpers/isNaN":22,"./helpers/isFinite":23,"./helpers/sign":25,"./helpers/mod":26,"is-callable":33,"es-to-primitive/es5":32,"has":29}],28:[function(require,module,exports) {
 'use strict';
 
 var has = require('has');
@@ -920,7 +920,7 @@ module.exports = function isRegex(value) {
 
 	return tryRegexExecCall(value);
 };
-},{"has":30}],19:[function(require,module,exports) {
+},{"has":29}],19:[function(require,module,exports) {
 'use strict';
 
 var has = require('has');
@@ -1594,7 +1594,7 @@ var ES6 = assign(assign({}, ES5), {
 delete ES6.CheckObjectCoercible; // renamed in ES6 to RequireObjectCoercible
 
 module.exports = ES6;
-},{"has":30,"es-to-primitive/es6":29,"./helpers/isNaN":22,"./helpers/isFinite":23,"./helpers/assign":24,"./helpers/sign":25,"./helpers/mod":26,"./helpers/isPrimitive":35,"function-bind":31,"./es5":21,"is-regex":28}],16:[function(require,module,exports) {
+},{"has":29,"es-to-primitive/es6":30,"./helpers/isNaN":22,"./helpers/isFinite":23,"./helpers/assign":24,"./helpers/sign":25,"./helpers/mod":26,"./helpers/isPrimitive":35,"function-bind":31,"./es5":21,"is-regex":28}],16:[function(require,module,exports) {
 'use strict';
 
 module.exports = require('./es2015');
@@ -1904,7 +1904,7 @@ var global = (1,eval)("this");
 var process = require("process");
 // XHook - v1.4.9 - https://github.com/jpillora/xhook
 // Jaime Pillora <dev@jpillora.com> - MIT Copyright 2018
-(function(window,undefined) {
+(function(undefined) {
 var AFTER, BEFORE, COMMON_EVENTS, EventEmitter, FETCH, FIRE, FormData, NativeFetch, NativeFormData, NativeXMLHttp, OFF, ON, READY_STATE, UPLOAD_EVENTS, WINDOW, XHookFetchRequest, XHookFormData, XHookHttpRequest, XMLHTTP, convertHeaders, depricatedProp, document, fakeEvent, mergeObjects, msie, nullify, proxyEvents, slice, useragent, xhook, _base,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
@@ -2277,7 +2277,6 @@ XHookHttpRequest = WINDOW[XMLHTTP] = function() {
         facade[FIRE]("loadstart", {});
       }
       if (currentState === 2) {
-        readHead();
         writeHead();
       }
       if (currentState === 4) {
@@ -2602,7 +2601,8 @@ if (typeof define === "function" && define.amd) {
   WINDOW.xhook = xhook;
 }
 
-}.call(this,window));
+}.call(this));
+
 },{"process":38}],9:[function(require,module,exports) {
 var config = function config(o) {
   if (o) {
@@ -2728,7 +2728,7 @@ exports.strip = function (src) {
   }
   return dst;
 };
-},{"xhook":4,"./config":9}],15:[function(require,module,exports) {
+},{"xhook":4,"./config":9}],14:[function(require,module,exports) {
 var xhook = require("xhook").xhook;
 var config = require("./config");
 
@@ -3038,7 +3038,7 @@ exports.initialise = function () {
     return window.attachEvent("onmessage", handle);
   }
 };
-},{"xhook":4,"./config":9,"./util":6,"./slave":15}],14:[function(require,module,exports) {
+},{"xhook":4,"./config":9,"./util":6,"./slave":14}],15:[function(require,module,exports) {
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var xhook = require("xhook").xhook;
@@ -3300,7 +3300,7 @@ exports.initialise = function () {
     });
   });
 };
-},{"./config":9,"./util":6,"./master":14,"./slave":15}],2:[function(require,module,exports) {
+},{"./config":9,"./util":6,"./master":15,"./slave":14}],2:[function(require,module,exports) {
 "use strict";
 
 //feature detect
